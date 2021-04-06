@@ -4,6 +4,7 @@ import java.text.NumberFormat;
 
 import javafx.application.Application;
 import javafx.application.Platform;
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -11,6 +12,9 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TextInputDialog;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
+import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
@@ -79,12 +83,17 @@ public class Hostel extends Application {
         Scene scene = new Scene(root, Color.LIGHTBLUE);
 
         addTenantButton.setOnAction(e -> addHandler());
+        addTenantButton.setBackground(new Background(new BackgroundFill(Color.LIGHTYELLOW, new CornerRadii(10), Insets.EMPTY)));
         displayTenantsButton.setOnAction(e -> displayHandler());
+        displayTenantsButton.setBackground(new Background(new BackgroundFill(Color.LIGHTYELLOW, new CornerRadii(10), Insets.EMPTY)));
         remTenantButton.setOnAction(e -> removeHandler());
+        remTenantButton.setBackground(new Background(new BackgroundFill(Color.LIGHTYELLOW, new CornerRadii(10), Insets.EMPTY)));
         saveQuitButton.setOnAction(e -> saveAndQuitHandler());
+        saveQuitButton.setBackground(new Background(new BackgroundFill(Color.LIGHTYELLOW, new CornerRadii(10), Insets.EMPTY)));
         makePaymentButton.setOnAction(e -> paymentsHandler());
+        makePaymentButton.setBackground(new Background(new BackgroundFill(Color.LIGHTYELLOW, new CornerRadii(10), Insets.EMPTY)));
         listPaymentsButton.setOnAction(e -> listPaymentsHandler());
-
+        listPaymentsButton.setBackground(new Background(new BackgroundFill(Color.LIGHTYELLOW, new CornerRadii(10), Insets.EMPTY)));
         noOfRooms = getNumberOfRooms();
         list = new TenantList(noOfRooms);
         TenantFileHandler.readRecords(list);
